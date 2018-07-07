@@ -1,0 +1,9 @@
+version: 0.0.{build}
+image:
+- Ubuntu
+## windows build server seems to be < .net core 2.1.1
+# - Visual Studio 2017 
+#before_build:
+#- cmd: nuget restore
+build:
+  verbosity: minimal

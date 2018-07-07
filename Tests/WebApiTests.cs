@@ -78,10 +78,10 @@ namespace Tests
             if (diagnostic.Errors.Count > 0) {
                 TestContext.WriteLine("Dignostic errors:");
                 foreach (var openApiError in diagnostic.Errors) {
-                 TestContext.WriteLine($"{openApiError.Message} ({openApiError.Pointer})");
+                    TestContext.WriteLine($"{openApiError.Message} ({openApiError.Pointer})");
                 }
+                Assert.Fail("diagnostic errors");
             }
-            Assert.AreEqual(0, diagnostic.Errors);
             Assert.AreEqual(OpenApiSpecVersion.OpenApi2_0, diagnostic.SpecificationVersion);
             Assert.IsTrue(document.Paths.Count > 0);
         }
@@ -92,7 +92,7 @@ namespace Tests
             var reader = new OpenApiStringReader();
             var document = reader.Read(swaggerJson, out _);
             var openApi3Yaml = document.Serialize(OpenApiSpecVersion.OpenApi3_0, OpenApiFormat.Yaml);
-            TestContext.WriteLine(openApi3Yaml);
+            Assert.IsFalse(string.IsNullOrWhiteSpace(openApi3Yaml));
         }
     }
 }
