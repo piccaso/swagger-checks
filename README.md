@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/i53pi86rap5m87i8/branch/master?svg=true)](https://ci.appveyor.com/project/piccaso/swagger-checks/branch/master)
