@@ -93,8 +93,14 @@ namespace Tests
             var reader = new OpenApiStringReader();
             var document = reader.Read(swaggerJson, out _);
             var openApi3Yaml = document.Serialize(OpenApiSpecVersion.OpenApi3_0, OpenApiFormat.Yaml);
+            var openApi3Json = document.Serialize(OpenApiSpecVersion.OpenApi3_0, OpenApiFormat.Json);
+            var openApi2Yaml = document.Serialize(OpenApiSpecVersion.OpenApi2_0, OpenApiFormat.Json);
+            File.WriteAllText("openapi3-spec.yaml", openApi3Yaml, Encoding.UTF8);
+            File.WriteAllText("openapi3-spec.json", openApi3Json, Encoding.UTF8);
+            File.WriteAllText("openapi2-spec.yaml", openApi2Yaml, Encoding.UTF8);
             Assert.IsFalse(string.IsNullOrWhiteSpace(openApi3Yaml));
-            File.WriteAllText("openapi3-spec.yaml", openApi3Yaml);
+            Assert.IsFalse(string.IsNullOrWhiteSpace(openApi2Yaml));
+            Assert.IsFalse(string.IsNullOrWhiteSpace(openApi3Json));
         }
     }
 }
