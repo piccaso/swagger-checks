@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApi.Basic", "RestApi.Basic\RestApi.Basic.csproj", "{79CAF7FB-0A1E-45BC-B306-9E5D0EB747C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestApi.Basic", "RestApi.Basic\RestApi.Basic.csproj", "{79CAF7FB-0A1E-45BC-B306-9E5D0EB747C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{21394A90-E8D8-487D-9978-8119941ACBAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{21394A90-E8D8-487D-9978-8119941ACBAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApi.Basic.Client", "RestApi.Basic.Client\RestApi.Basic.Client.csproj", "{EFBF1204-732D-4DE5-8D82-E0B892DEDF7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{21394A90-E8D8-487D-9978-8119941ACBAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21394A90-E8D8-487D-9978-8119941ACBAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21394A90-E8D8-487D-9978-8119941ACBAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFBF1204-732D-4DE5-8D82-E0B892DEDF7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFBF1204-732D-4DE5-8D82-E0B892DEDF7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFBF1204-732D-4DE5-8D82-E0B892DEDF7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFBF1204-732D-4DE5-8D82-E0B892DEDF7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
