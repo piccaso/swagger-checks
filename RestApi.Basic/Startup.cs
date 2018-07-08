@@ -20,6 +20,8 @@ namespace RestApi.Basic {
                 .AddJsonOptions(o => o.SerializerSettings.Formatting = Formatting.Indented);
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new Info {Title = "My API", Version = "v1"}); 
+                c.SchemaFilter<NullableSchemaFilter>();
+                c.SchemaFilter<NonNullableAsRequiredSchemaFilter>(); // depends on NullableSchemaFilter
                 c.OperationFilter<RestErrorHandler.DefaultResponseTypeFilter>();
             });
         }
