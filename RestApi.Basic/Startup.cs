@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace RestApi.Basic {
@@ -13,10 +14,14 @@ namespace RestApi.Basic {
 
         public IConfiguration Configuration { get; }
 
-
         public void ConfigureServices(IServiceCollection services) {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info {Title = "My API", Version = "v1"}); });
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddJsonOptions(o => o.SerializerSettings.Formatting = Formatting.Indented);
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1", new Info {Title = "My API", Version = "v1"}); 
+                c.OperationFilter<RestErrorHandler.DefaultResponseTypeFilter>();
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env) {

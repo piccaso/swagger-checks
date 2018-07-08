@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace RestApi.Basic.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController, Produces("application/json")]
     public class ValuesController : ControllerBase
     {
         // GET api/values
