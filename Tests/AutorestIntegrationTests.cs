@@ -16,15 +16,21 @@ namespace Tests {
         public void SetUp() {
             var host = new WebHostBuilder().UseStartup<Startup>();
             var server = new TestServer(host);
-            var messageHandler = server.CreateHandler() as HttpClientHandler;
-            _apiClient = new MyAPI(messageHandler);
+
             _httpClient = server.CreateClient();
+            _apiClient = new MyAPI();
+
+            // https://github.com/Azure/autorest/issues/2958
+            _apiClient.GetType()
+                .GetProperty(nameof(_apiClient.HttpClient))
+                .SetValue(_apiClient, _httpClient);
         }
 
         [Test]
         public void AutoRest() {
-            var value = _apiClient.ApiValuesGet(); // throws: Microsoft.Rest.HttpOperationException : Operation returned an invalid status code 'NotFound'
+            var value = _apiClient.ApiValuesGet();
             TestContext.WriteLine(string.Join(",", value));
+            Assert.AreEqual("value2", value[1]);
         }
 
         [Test]
