@@ -20,4 +20,10 @@
     <ProjectReference Include="..\RestApi.Basic\RestApi.Basic.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="hoaxly-inbox-schema.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

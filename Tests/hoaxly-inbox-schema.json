@@ -1,0 +1,648 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "http://hoax.ly/hoaxlyInboxSchema.json",
+    "type": "object",
+    "properties": {
+        "itemReviewed": {
+            "type": "object",
+            "properties": {
+                "publisher": {
+										"type": "object",
+										"properties": {
+												"logo": {
+														"type": "string"
+												},
+												"@type": {
+														"type": "string"
+												},
+												"name": {
+														"type": "string"
+												}
+										}
+                },
+                "author": {
+										"type": "object",
+										"properties": {
+												"@type": {
+														"type": "string"
+												},
+												"name": {
+														"type": "string"
+												}
+										}
+                },
+                "headline": {
+										"type": "string"
+                },
+                "image": {
+										"type": "object",
+										"properties": {
+												"url": {
+														"type": "string",
+														"format": "uri"
+												},
+												"width": {
+														"type": "string"
+												},
+												"@type": {
+														"type": "string"
+												},
+												"height": {
+														"type": "string"
+												}
+										}
+                },
+                "datePublished": {
+										"type": "string"
+                },
+                "url": {
+										"type": "string",
+										"format": "uri"
+                },
+                "@type": {
+										"type": "string"
+                }
+            }
+        },
+        "json-ld": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+										"potentialAction": {
+												"type": "object",
+												"properties": {
+														"query-input": {
+																"type": "string"
+														},
+														"@type": {
+																"type": "string"
+														},
+														"target": {
+																"type": "string"
+														}
+												}
+										},
+										"name": {
+												"type": "string"
+										},
+										"url": {
+												"type": "string",
+												"format": "uri"
+										},
+										"@context": {
+												"type": "string"
+										},
+										"@id": {
+												"type": "string"
+										},
+										"@type": {
+												"type": "string"
+										},
+										"sameAs": {
+												"type": "array",
+												"items": {
+														"type": "string"
+												}
+										},
+										"logo": {
+												"type": "string"
+										},
+										"mainEntity": {
+												"type": "object",
+												"properties": {
+														"publisher": {
+																"type": "object",
+																"properties": {
+																		"logo": {
+																				"type": "string"
+																		},
+																		"@type": {
+																				"type": "string"
+																		},
+																		"name": {
+																				"type": "string"
+																		}
+																}
+														},
+														"author": {
+																"type": "object",
+																"properties": {
+																		"logo": {
+																				"type": "string"
+																		},
+																		"@type": {
+																				"type": "string"
+																		},
+																		"name": {
+																				"type": "string"
+																		}
+																}
+														},
+														"headline": {
+																"type": "string"
+														},
+														"image": {
+																"type": "object",
+																"properties": {
+																		"url": {
+																				"type": "string",
+																				"format": "uri"
+																		},
+																		"width": {
+																				"type": "string"
+																		},
+																		"@type": {
+																				"type": "string"
+																		},
+																		"height": {
+																				"type": "string"
+																		}
+																}
+														},
+														"datePublished": {
+																"type": "string"
+														},
+														"review": {
+																"type": "object",
+																"properties": {
+																		"publisher": {
+																				"type": "object",
+																				"properties": {
+																						"logo": {
+																								"type": "string"
+																						},
+																						"@type": {
+																								"type": "string"
+																						},
+																						"name": {
+																								"type": "string"
+																						}
+																				}
+																		},
+																		"author": {
+																				"type": "object",
+																				"properties": {
+																						"url": {
+																								"type": "string",
+																								"format": "uri"
+																						},
+																						"logo": {
+																								"type": "string"
+																						},
+																						"@type": {
+																								"type": "string"
+																						},
+																						"name": {
+																								"type": "string"
+																						}
+																				}
+																		},
+																		"url": {
+																				"type": "string",
+																				"format": "uri"
+																		},
+																		"image": {
+																				"type": "object",
+																				"properties": {
+																						"url": {
+																								"type": "string",
+																								"format": "uri"
+																						},
+																						"width": {
+																								"type": "string"
+																						},
+																						"@type": {
+																								"type": "string"
+																						},
+																						"height": {
+																								"type": "string"
+																						}
+																				}
+																		},
+																		"datePublished": {
+																				"type": "string"
+																		},
+																		"reviewBody": {
+																				"type": "string"
+																		},
+																		"reviewRating": {
+																				"type": "object",
+																				"properties": {
+																						"ratingValue": {
+																								"type": "number",
+																								"minimum": 0,
+																								"maximum": 5,
+																								"pattern": "0|1|2|3|4|5",
+																								"chance": {
+																										"pickone": [
+																												[ 4,5,3.2,1 ]
+																										]
+																								}
+																						},
+																						"alternateName": {
+																								"type": "string",
+																								"pattern": "Unsupported|Inaccurate|Mostly_Correct|mostly_correct|^[+-]?([0-9]*[.])?[0-9]+$"
+																						},
+																						"worstRating": {
+																								"type": "number"
+																						},
+																						"@type": {
+																								"type": "string"
+																						},
+																						"bestRating": {
+																								"type": "number"
+																						}
+																				}
+																		},
+																		"@type": {
+																				"type": "string"
+																		},
+																		"itemReviewed": {
+																				"type": "object",
+																				"properties": {
+																						"publisher": {
+																								"type": "object",
+																								"properties": {
+																										"logo": {
+																												"type": "string"
+																										},
+																										"@type": {
+																												"type": "string"
+																										},
+																										"name": {
+																												"type": "string"
+																										}
+																								}
+																						},
+																						"author": {
+																								"type": "object",
+																								"properties": {
+																										"@type": {
+																												"type": "string"
+																										},
+																										"name": {
+																												"type": "string"
+																										}
+																								}
+																						},
+																						"headline": {
+																								"type": "string"
+																						},
+																						"image": {
+																								"type": "object",
+																								"properties": {
+																										"url": {
+																												"type": "string",
+																												"format": "uri"
+																										},
+																										"width": {
+																												"type": "string"
+																										},
+																										"@type": {
+																												"type": "string"
+																										},
+																										"height": {
+																												"type": "string"
+																										}
+																								}
+																						},
+																						"datePublished": {
+																								"type": "string"
+																						},
+																						"url": {
+																								"type": "string",
+																								"format": "uri"
+																						},
+																						"@type": {
+																								"type": "string"
+																						}
+																				}
+																		}
+																}
+														},
+														"@type": {
+																"type": "string"
+														}
+												}
+										}
+                },
+                "required": [
+										"name",
+										"url",
+										"@context",
+										"@id",
+										"@type"
+                ]
+            }
+        },
+        "microdata": {
+            "type": "object",
+            "properties": {
+                "type": {
+										"$id": "/properties/type",
+										"type": "string",
+										"title": "The Type Schema ",
+										"default": "",
+										"examples": [
+												"http://schema.org/Review"
+										]
+                },
+                "properties": {
+										"$id": "/properties/properties",
+										"type": "object",
+										"properties": {
+												"author": {
+														"$id": "/properties/properties/properties/author",
+														"type": "string",
+														"title": "The Author Schema ",
+														"default": "",
+														"examples": [
+																"Reviewed By"
+														]
+												},
+												"headline": {
+														"$id": "/properties/properties/properties/headline",
+														"type": "string",
+														"title": "The Headline Schema ",
+														"default": "",
+														"examples": [
+																"Retinal scans to detect heart attack risk? Newsweek offers a blurry picture"
+														]
+												},
+												"reviewBody": {
+														"$id": "/properties/properties/properties/reviewBody",
+														"type": "string",
+														"title": "The Reviewbody Schema ",
+														"default": "",
+														"examples": [
+																"Our Review SummaryScanning of an eye in progress. Concept for Biometrics\nThis vague Newsweek story describes how scientists from Google have reported developing an algorithm that can use large data sets of retinal scans to determine a person’s risk ofdeveloping cardiovascular problems.\nThe story establishes the novelty of this approach and mentions current assessment tools. However, there’s no mention of costs or possible harms from this approach, and no numerical data on how effective it might be. There are also no outside sources nor alternatives mentioned, and it doesn’t indicate when, if ever, this method might be available.\n Why This MattersHeart disease is the leading killer in the U.S., causing more than 600,000 deaths per year, according to the CDC.  So if there was a simple, non-invasive method of gauging a person’s risk for developing a heart attack later on, simply by scanning a person’s eyes, that would be a substantive aid in public health.  Sadly this story fails to back up that dream with any real substance, and by doing so, harms readers by leading them on.  Better to have not offered the story at all."
+														]
+												},
+												"datePublished": {
+														"$id": "/properties/properties/properties/datePublished",
+														"type": "string",
+														"title": "The Datepublished Schema ",
+														"default": "",
+														"examples": [
+																"February 26, 2018"
+														]
+												},
+												"publishingPrinciples": {
+														"$id": "/properties/properties/properties/publishingPrinciples",
+														"type": "array",
+														"items": {
+																"$id": "/properties/properties/properties/publishingPrinciples/items",
+																"type": "string",
+																"title": "The 0th Schema ",
+																"default": "",
+																"examples": [
+																		"https://www.healthnewsreview.org/about-us/review-criteria/criterion-1/",
+																		"https://www.healthnewsreview.org/about-us/review-criteria/criterion-2/",
+																		"https://www.healthnewsreview.org/about-us/review-criteria/criterion-3/",
+																		"https://www.healthnewsreview.org/about-us/review-criteria/criterion-4/",
+																		"https://www.healthnewsreview.org/about-us/review-criteria/criterion-5/",
+																		"https://www.healthnewsreview.org/about-us/review-criteria/criterion-6/",
+																		"https://www.healthnewsreview.org/about-us/review-criteria/criterion-7/",
+																		"https://www.healthnewsreview.org/about-us/review-criteria/criterion-8/",
+																		"https://www.healthnewsreview.org/about-us/review-criteria/criterion-9/",
+																		"https://www.healthnewsreview.org/about-us/review-criteria/criterion-10/"
+																]
+														}
+												},
+												"itemReviewed": {
+														"$id": "/properties/properties/properties/itemReviewed",
+														"type": "string",
+														"format": "uri",
+														"title": "The Itemreviewed Schema ",
+														"default": "",
+														"examples": [
+																"http://www.newsweek.com/google-retinal-scans-predict-heart-attack-812098"
+														]
+												}
+										}
+                }
+            }
+
+
+
+        },
+        "factoidPubdate": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "url": {
+            "type": "string",
+            "format": "uri"
+        },
+        "self": {
+            "type": "number"
+        },
+        "factoidContent": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "hasMetaData": {
+            "type": "boolean"
+        },
+        "rdfa": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+										"http://www.w3.org/1999/xhtml/vocab#role": {
+												"type": "array",
+												"items": {
+														"type": "object",
+														"properties": {
+																"@id": {
+																		"type": "string"
+																}
+														},
+														"required": [
+																"@id"
+														]
+												}
+										},
+										"@id": {
+												"type": "string"
+										},
+										"http://ogp.me/ns#image": {
+												"type": "array",
+												"items": {
+														"type": "object",
+														"properties": {
+																"@value": {
+																		"type": "string"
+																}
+														}
+												}
+										},
+										"http://ogp.me/ns#image:width": {
+												"type": "array",
+												"items": {
+														"type": "object",
+														"properties": {
+																"@value": {
+																		"type": "string"
+																}
+														}
+												}
+										},
+										"http://ogp.me/ns#url": {
+												"type": "array",
+												"items": {
+														"type": "object",
+														"properties": {
+																"@value": {
+																		"type": "string"
+																}
+														}
+												}
+										},
+										"http://ogp.me/ns#updated_time": {
+												"type": "array",
+												"items": {
+														"type": "object",
+														"properties": {
+																"@value": {
+																		"type": "string"
+																}
+														}
+												}
+										},
+										"http://ogp.me/ns#image:height": {
+												"type": "array",
+												"items": {
+														"type": "object",
+														"properties": {
+																"@value": {
+																		"type": "string"
+																}
+														}
+												}
+										},
+										"http://ogp.me/ns#title": {
+												"type": "array",
+												"items": {
+														"type": "object",
+														"properties": {
+																"@value": {
+																		"type": "string"
+																}
+														}
+												}
+										},
+										"http://ogp.me/ns/fb#app_id": {
+												"type": "array",
+												"items": {
+														"type": "object",
+														"properties": {
+																"@value": {
+																		"type": "string"
+																}
+														}
+												}
+										},
+										"http://ogp.me/ns#type": {
+												"type": "array",
+												"items": {
+														"type": "object",
+														"properties": {
+																"@value": {
+																		"type": "string"
+																}
+														}
+												}
+										},
+										"article:modified_time": {
+												"type": "array",
+												"items": {
+														"type": "object",
+														"properties": {
+																"@value": {
+																		"type": "string"
+																}
+														}
+												}
+										},
+										"http://ogp.me/ns#description": {
+												"type": "array",
+												"items": {
+														"type": "object",
+														"properties": {
+																"@value": {
+																		"type": "string"
+																}
+														}
+												}
+										},
+										"article:publisher": {
+												"type": "array",
+												"items": {
+														"type": "object",
+														"properties": {
+																"@value": {
+																		"type": "string"
+																}
+														}
+												}
+										},
+										"http://ogp.me/ns#site_name": {
+												"type": "array",
+												"items": {
+														"type": "object",
+														"properties": {
+																"@value": {
+																		"type": "string"
+																}
+														}
+												}
+										},
+										"article:published_time": {
+												"type": "array",
+												"items": {
+														"type": "object",
+														"properties": {
+																"@value": {
+																		"type": "string"
+																}
+														}
+												}
+										},
+										"https://api.w.org/": {
+												"type": "array",
+												"items": {
+														"type": "object",
+														"properties": {
+																"@id": {
+																		"type": "string"
+																}
+														}
+												}
+										}
+                },
+                "required": [
+										"http://www.w3.org/1999/xhtml/vocab#role",
+										"@id"
+                ]
+            }
+        },
+        "_template": {
+            "type": "string"
+        },
+        "factoidHeadline": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "schema": {
+            "type": "string"
+        }
+    }
+}

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Diagnostics;
-using System.IO;
-using System.Net.Http;
-using System.Text;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Extensions;
 using Microsoft.OpenApi.Readers;
-using Microsoft.OpenApi.Validations;
 using NSwag;
 using NSwag.CodeGeneration.CSharp;
 using NUnit.Framework;
