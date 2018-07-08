@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RestApi.Basic.Client\RestApi.Basic.Client.csproj" />
     <ProjectReference Include="..\RestApi.Basic\RestApi.Basic.csproj" />
   </ItemGroup>
 
